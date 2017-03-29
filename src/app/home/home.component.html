@@ -1,0 +1,8 @@
+<div *ngIf="team">
+  <ul>
+    <li *ngFor="let member of team; let i = index">
+      {{member.first_name}} {{member.last_name}}
+      <img src="http://bytecubed.com/{{member.photo}}" />
+    </li>
+  </ul>
+</div>
