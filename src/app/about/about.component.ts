@@ -3,11 +3,11 @@ import {
   OnInit
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TeamService } from '../services/';
 
 @Component({
   selector: 'about',
-  styles: [`
-  `],
+  styles: [` `],
   template: `
     <h1>About</h1>
     <div>
@@ -25,9 +25,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AboutComponent implements OnInit {
 
   public localState: any;
-  constructor(
-    public route: ActivatedRoute
-  ) {}
+  constructor( public route: ActivatedRoute, private teamService: TeamService ) {}
 
   public ngOnInit() {
     this.route

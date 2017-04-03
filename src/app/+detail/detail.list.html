@@ -1,0 +1,6 @@
+<ul *ngFor="let user of userList">
+    <li class="name">
+        <a [routerLink]=" ['./child-detail/' + user.id] ">
+            {{user.name}}, age: {{user.age}}
+        </a></li>
+</ul>
