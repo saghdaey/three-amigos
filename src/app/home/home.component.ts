@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { TeamService } from '../services';
+import { TeamMember } from '../models';
 
 @Component({
   // The selector is what angular internally uses
@@ -20,13 +21,13 @@ import { TeamService } from '../services';
 export class HomeComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
-  public team: any;
+  public team: TeamMember[];
   // TypeScript public modifiers
   constructor( private teamService: TeamService, public appState: AppState, public title: Title) {}
 
   public ngOnInit() {
     // this.teamService.getTeam().subscribe(data => { this.team = data });
-    this.team = this.teamService.getTeam();
+    this.team = this.teamService.getStronglyTypedTeam();
     // this.title.getData().subscribe(data => this.data = data);
   }
 
