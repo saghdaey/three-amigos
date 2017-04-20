@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ValidationService {
+    // see control-messages.component.ts: this is where we're setting the error message collection
     public static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
         let config = {
             required: 'Required',
