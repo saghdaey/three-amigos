@@ -1,4 +1,3 @@
-/**
- * Created by kheil on 3/23/2017.
- */
 export * from './teams.service';
+export * from './registration.service';
+export * from './validation.service';

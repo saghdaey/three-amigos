@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
@@ -25,9 +25,10 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
+import { RegistrationComponent, ControlMessagesComponent } from './registration';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
-import { TeamService } from './services';
+import { TeamService, RegistrationService } from './services';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -53,18 +54,22 @@ type StoreType = {
     AppComponent,
     AboutComponent,
     HomeComponent,
-    NoContentComponent
+    RegistrationComponent,
+    NoContentComponent,
+    ControlMessagesComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-      TeamService
+    TeamService,
+    RegistrationService
   ]
 })
 export class AppModule {
