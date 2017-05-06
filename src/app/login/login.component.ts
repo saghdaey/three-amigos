@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../app.service';
-import { RegistrationService, ValidationService } from '../services';
+import { Router } from '@angular/router';
+import { Globals } from '../globals';
+import { RegistrationService, ValidationService, LoginService } from '../services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,7 +12,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
     public loginForm: FormGroup;
-    constructor(private fb: FormBuilder,  private registration: RegistrationService) {
+    private errorMessage:String;
+    constructor(private fb: FormBuilder,  private globals: Globals, private loginService: LoginService, private router: Router) {
         this.loginForm = fb.group({
             'email': ['', [Validators.required]],
             'password': ['', [Validators.required]]
@@ -21,7 +24,10 @@ export class LoginComponent implements OnInit {
     }
 
     public login() {
-        console.log(this.loginForm.value);
+        this.loginService.login(this.loginForm.value.email,this.loginForm.value.password).subscribe(data=>{
+            this.globals.setUser(data);
+            this.router.navigate(['./home']);
+        });
         return true;
     }
 

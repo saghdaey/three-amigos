@@ -29,7 +29,7 @@ import { RegistrationComponent, ControlMessagesComponent } from './registration'
 import { LoginComponent } from './login';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
-import { TeamService, RegistrationService } from './services';
+import { TeamService, RegistrationService, LoginService } from './services';
 import { WelcomeComponent } from './welcome';
 import { Globals } from './globals';
 
@@ -75,6 +75,7 @@ type StoreType = {
     APP_PROVIDERS,
     TeamService,
     RegistrationService,
+    LoginService,
     Globals
   ]
 })

@@ -1,10 +1,22 @@
-<div class="my-app">
-<main>
-    <router-outlet></router-outlet>
-</main>
+<div class="header">
+    <div *ngIf="user"><b>CrissCross LoggedIn</b>
+        <img src="./../assets/icon/crisscross_logo.png">
+        <b>CrissCross - logged in</b>
+    </div>
+    <div *ngIf="!user" class="public">
+        <img src="./../assets/icon/crisscross_logo.png">
+        <b>CrissCross - Not LoggedIn</b>
+    </div>
 </div>
-<nav>
-    <a [routerLink]=" [''] "
+
+<div class="router-content">
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>
+
+<nav *ngIf="user">
+    <a [routerLink]=" ['./home'] "
        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Home
     </a>
@@ -17,5 +29,6 @@
         My Profile
     </a>
 </nav>
+
 <footer>
 </footer>

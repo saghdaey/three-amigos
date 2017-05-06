@@ -30,4 +30,7 @@ export class AppComponent implements OnInit {
     // this.globals.setUser(test_user);
     // let user=this.globals.getUser();
   }
+  get user(){
+    return this.globals.getUser();
+  }
 }

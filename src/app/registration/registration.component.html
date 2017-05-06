@@ -1,15 +1,18 @@
 <div class="container">
     <div class="sign-up-page">
-        <div class="section-title">Let's start with some basics:</div>
-        <div *ngIf="!basicInfoForm">select type
-            <div>Thanks for joining us! Select your background to get started.</div>
-            <div>I am new to this community!</div>
-            <div (click)="assignUserType('guru')">Help me get connected</div>
-            <div>I've been here for a while. I'd like to support newcomers!</div>
-            <div (click)="assignUserType('guru')">Show me how</div>
-
+        <div *ngIf="!basicInfoForm" class="prescreen">
+            <div class="page-title">Thanks for joining us! Select your background to get started.</div>
+            <div class="user-type-section">
+                <div>I am new to this community!</div>
+                <div class="green-button" (click)="assignUserType('guru')">Help me get connected</div>
+            </div>
+            <div class="user-type-section">
+                <div>I've been here for a while. I'd like to support newcomers!</div>
+                <div class="green-button" (click)="assignUserType('guru')">Show me how</div>
+            </div>
         </div>
         <form *ngIf="basicInfoForm" id="basic-info-form" [formGroup]="basicInfoForm" (ngSubmit)="signUp()">
+            <div class="page-title">Let's start with some basics:</div>
             <div class="form-group">
                 <input type="text" id="first_name" name="first_name" placeholder="First name*" class="form-control" formControlName="first_name"/>
                 <control-messages [control]="basicInfoForm.controls.first_name"></control-messages>
@@ -33,7 +36,7 @@
                 <input type="password"  id="password" name="password" placeholder="Create password*" class="form-control" formControlName="password"/>
                 <control-messages [control]="basicInfoForm.controls.password"></control-messages>
             </div>
-            <input type="submit" class="navigation-button" value="Next"/>
+            <input type="submit" class="green-button" value="Next"/>
         </form>
     </div>
 </div>
