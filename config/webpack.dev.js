@@ -235,6 +235,9 @@ module.exports = function (options) {
       watchOptions: {
         aggregateTimeout: 300,
         poll: 1000
+      },
+      stats:{
+        warnings:false
       }
     },
 
