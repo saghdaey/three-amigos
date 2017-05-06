@@ -28,7 +28,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'ByteCubed Angular2 Base Project',
+  title: 'CrissCross',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };

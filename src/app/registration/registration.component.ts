@@ -13,9 +13,16 @@ import { Globals } from './../globals';
     templateUrl: './registration.component.html'
 })
 export class RegistrationComponent implements OnInit {
-    public signUpForm: FormGroup;
+    public basicInfoForm: FormGroup;
+    public userType: String;
     constructor(private fb: FormBuilder,  private registration: RegistrationService, private globals: Globals) {
-        this.signUpForm = fb.group({
+    }
+
+    public ngOnInit() {
+    }
+
+    public displayBasicInfoForm():void{
+        this.basicInfoForm = this.fb.group({
             'first_name': ['', Validators.required],
             'last_name': ['', Validators.required],
             'email': ['', [Validators.required, ValidationService.emailValidator]],
@@ -25,14 +32,18 @@ export class RegistrationComponent implements OnInit {
         });
     }
 
-    public ngOnInit() {
-        let user=this.globals.getUser();
-        console.log(user);
-    }
-
     public signUp() {
-        console.log(this.signUpForm.value);
+        let user_info=this.basicInfoForm.value;
+        user_info["type"]=this.userType;
+        this.globals.setUser(user_info);
+        //navigate to next screen
         return true;
     }
+
+    assignUserType(value):void{
+        this.userType=value;;
+        this.displayBasicInfoForm();
+    }
+
 
 }

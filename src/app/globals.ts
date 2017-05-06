@@ -7,6 +7,7 @@ import { Observable, BehaviorSubject} from "rxjs";
 export class Globals {
     private loggedInUser;
     private userId:number;
+    private userType:String;
     private _loggedinSource = new BehaviorSubject<any>(null);
     loggedin$ = this._loggedinSource.asObservable();
 

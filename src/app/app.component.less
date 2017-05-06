@@ -3,8 +3,33 @@ html, body{
   font-family: Arial, Helvetica, sans-serif
 }
 
+
+
+.my-app{
+  padding:15px;
+}
+
+nav{
+  background-color:black;
+  height:40px;
+  text-align:center;
+  a{
+    color:white;
+    padding-right:10px;
+    &:last-child{
+      padding-right:0;
+    }
+    &:hover{
+      color:pink;
+      cursor:pointer;
+      text-decoration:underline;
+    }
+  }
+}
+
 a.active {
-  background-color: gray;
+  color:pink;
+  text-decoration:none;
 }
 
 .hidden{

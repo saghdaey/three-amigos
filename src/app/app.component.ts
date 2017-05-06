@@ -27,9 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-
-    this.globals.setUser(test_user);
-    let user=this.globals.getUser();
-    console.log(user);
+    // this.globals.setUser(test_user);
+    // let user=this.globals.getUser();
   }
 }

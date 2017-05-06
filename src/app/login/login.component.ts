@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../app.service';
-import { Title } from './title';
 import { RegistrationService, ValidationService } from '../services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
