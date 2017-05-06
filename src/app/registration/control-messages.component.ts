@@ -13,7 +13,7 @@ import { ValidationService } from '../services';
 export class ControlMessagesComponent {
     @Input()
     public control: FormControl;
-    constructor() { }
+    // constructor() { }
 
     get errorMessage() {
         for (let propertyName in this.control.errors) {

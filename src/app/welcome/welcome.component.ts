@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'welcome',
-  template: `
-    <div>
-      <h1>Welcome Component</h1>
-    </div>
-  `
+  template: require('./welcome.component.html')
 })
 export class WelcomeComponent {
 

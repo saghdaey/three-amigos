@@ -26,9 +26,12 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { RegistrationComponent, ControlMessagesComponent } from './registration';
+import { LoginComponent } from './login';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { TeamService, RegistrationService } from './services';
+import { WelcomeComponent } from './welcome';
+import { Globals } from './globals';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -56,7 +59,9 @@ type StoreType = {
     HomeComponent,
     RegistrationComponent,
     NoContentComponent,
-    ControlMessagesComponent
+    ControlMessagesComponent,
+    WelcomeComponent,
+    LoginComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -69,7 +74,8 @@ type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     TeamService,
-    RegistrationService
+    RegistrationService,
+    Globals
   ]
 })
 export class AppModule {

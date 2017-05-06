@@ -7,6 +7,10 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
+import { Globals } from './globals';
+
+var test_user=require('app/user/test_user.json');
+
 
 /*
  * App Component
@@ -19,10 +23,13 @@ import { AppState } from './app.service';
   template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
-
-  // constructor() {}
+  constructor(private globals: Globals) {
+  }
 
   public ngOnInit() {
-    let time = new Date();
+
+    this.globals.setUser(test_user);
+    let user=this.globals.getUser();
+    console.log(user);
   }
 }
