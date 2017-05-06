@@ -36,7 +36,9 @@
                 <input type="password"  id="password" name="password" placeholder="Create password*" class="form-control" formControlName="password"/>
                 <control-messages [control]="basicInfoForm.controls.password"></control-messages>
             </div>
-            <input type="submit" class="green-button" value="Next"/>
+            <div class="green-button" (click)="signUp()">Next</div>
+
+            <!--<input type="submit" class="green-button" value="Next"/>-->
         </form>
     </div>
 </div>

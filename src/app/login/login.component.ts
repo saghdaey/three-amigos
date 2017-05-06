@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     public login() {
         this.loginService.login(this.loginForm.value.email,this.loginForm.value.password).subscribe(data=>{
             this.globals.setUser(data);
-            this.router.navigate(['./home']);
+            this.router.navigate(['./matches']);
         });
         return true;
     }

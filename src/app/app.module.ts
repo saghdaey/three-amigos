@@ -32,6 +32,7 @@ import { NoContentComponent } from './no-content';
 import { TeamService, RegistrationService, LoginService } from './services';
 import { WelcomeComponent } from './welcome';
 import { Globals } from './globals';
+import { MatchesComponent, MatchesTileComponent } from './matches';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -61,7 +62,9 @@ type StoreType = {
     NoContentComponent,
     ControlMessagesComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    MatchesComponent, 
+    MatchesTileComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

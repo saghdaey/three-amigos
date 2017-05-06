@@ -1,4 +1,6 @@
-<div>description</div>
-<div>Welcome</div>
-<a [routerLink]="['./../login']">Login</a>
-<div>New user? <a [routerLink]="['./../register']">Sign up here</a></div>
+<div class="welcome-component">
+    <div class="description">Connecting new community members with neighbors who can lend a helping hand.</div>
+    <div class="page-title">Welcome!</div>
+    <div class="green-button" (click)="goToLogin()">Login</div>
+    <div class="new-user">New user? <a [routerLink]="['./../register']">Sign up here</a></div>
+</div>

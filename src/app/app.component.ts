@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 import { Globals } from './globals';
+import { ActivatedRoute } from '@angular/router'; 
 
 var test_user=require('app/user/test_user.json');
 
@@ -23,12 +24,10 @@ var test_user=require('app/user/test_user.json');
   template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
-  constructor(private globals: Globals) {
+  constructor(private globals: Globals, private route: ActivatedRoute) {
   }
 
   public ngOnInit() {
-    // this.globals.setUser(test_user);
-    // let user=this.globals.getUser();
   }
   get user(){
     return this.globals.getUser();
