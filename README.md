@@ -6,13 +6,14 @@
 
 <div>i used the angular2 webpack starter kit: https://github.com/AngularClass/angular-starter (big thanks!)</div>
 
-<ol>to run the app:
-<li>download node (https://nodejs.org/en/</li>
-<li>pull down this repository</li>
-<li>run npm install </li>
-<li>navigate to localhost:3000</li>
-</ol>
-
+<div>to run the app
+  <ol>
+    <li>download node (https://nodejs.org/en/</li>
+    <li>pull down this repository</li>
+    <li>run npm install </li>
+    <li>navigate to localhost:3000</li>
+  </ol>
+</div>
 ___
 
 
